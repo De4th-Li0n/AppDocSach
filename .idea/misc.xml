@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSach/app/src/main/res/drawable/matkhau.xml" value="0.12604166666666666" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSach/app/src/main/res/drawable/taikhoan.xml" value="0.12604166666666666" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSach/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSach/app/src/main/res/layout/activity_main_dang_ky.xml" value="0.33" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSach/app/src/main/res/layout/activity_main_dang_nhap.xml" value="0.33" />
       </map>

@@ -1,17 +1,20 @@
 package com.example.appdocsach.Database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import com.example.appdocsach.Model.TaiKhoan;
 
 public class Databasedocsach extends SQLiteOpenHelper {
 
     //Cơ sở dữ liệu
 
     //Tên database
-    private static String DATABASE_NAME = "doctruyen";
+    private static String DATABASE_NAME = "docsach";
 
     //Biến Tài khoán
     private static String TABLE_TAIKHOAN = "taikhoan";
@@ -47,7 +50,7 @@ public class Databasedocsach extends SQLiteOpenHelper {
             TABLE_TAIKHOAN+"("+ID_TAI_KHOAN+"))";
 
     //Insert dữ liệu vào bảng
-    //Phân quyên 1: admin | 2:user
+    //Phân quyên 2: admin | 1:user
     private String SQLQuery2 = "INSERT INTO TaiKhoan VAlUES (null,'admin','admin','admin@gmail.com',2)";
     private String SQLQuery3 = "INSERT INTO TaiKhoan VAlUES (null,'user','user','user@gmail.com',1)";
 
@@ -228,5 +231,10 @@ public class Databasedocsach extends SQLiteOpenHelper {
 
     }
 
-
+    //Phương thức lấy tất cả từ tài khoản
+    public Cursor getData(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TAIKHOAN,null);
+        return res;
+    }
 }
