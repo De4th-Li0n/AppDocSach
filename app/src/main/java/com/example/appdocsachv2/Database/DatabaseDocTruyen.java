@@ -1,11 +1,15 @@
 package com.example.appdocsachv2.Database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import com.example.appdocsachv2.Model.TaiKhoan;
 
 public class DatabaseDocTruyen extends SQLiteOpenHelper {
 
@@ -233,10 +237,28 @@ public class DatabaseDocTruyen extends SQLiteOpenHelper {
 
     }
 
+    //lấy tài khoản
     public Cursor getData(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM " + TABLE_TAIKHOAN,null);
         return res;
+    }
+
+    //add tài khoản
+    public void AddTaiKhoan(TaiKhoan taiKhoan){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //insert thông qua contentvalues
+        ContentValues values = new ContentValues();
+        values.put(TEN_TAI_KHOAN,taiKhoan.getmTenTaiKhoan());
+        values.put(MAT_KHAU,taiKhoan.getmMatKhau());
+        values.put(EMAIL,taiKhoan.getmEmail());
+        values.put(PHAN_QUYEN,taiKhoan.getmPhanQuyen());
+
+        db.insert(TABLE_TAIKHOAN,null,values);
+
+        db.close();
+        Log.e("ADD TK","TC");
     }
 
 }

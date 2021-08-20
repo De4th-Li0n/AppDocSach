@@ -29,6 +29,7 @@
 
     <EditText
         android:drawableRight="@drawable/matkhau"
+        android:inputType="textPassword"
         android:id="@+id/matkhau"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"

@@ -30,12 +30,14 @@ public class MainDangNhap extends AppCompatActivity {
         btnDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainDangNhap.this,MainDangKy.class);
+                Intent myIntent = new Intent(MainDangNhap.this, MainDangKy.class);
+                MainDangNhap.this.startActivity(myIntent);
             }
         });
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 //gán các biến giá trị nhập từ editText
                 String tentaikhoan = edtTaiKhoan.getText().toString();
                 String matkhau = edtMatKhau.getText().toString();

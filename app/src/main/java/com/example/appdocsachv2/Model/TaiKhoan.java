@@ -15,7 +15,7 @@ public class TaiKhoan {
         this.mEmail = mEmail;
     }
 
-    public TaiKhoan(String mTenTaiKhoan, String mEmail) {
+    public TaiKhoan(String taikhoan, String mTenTaiKhoan, String mEmail, int phanquyen) {
         this.mTenTaiKhoan = mTenTaiKhoan;
         this.mEmail = mEmail;
     }
