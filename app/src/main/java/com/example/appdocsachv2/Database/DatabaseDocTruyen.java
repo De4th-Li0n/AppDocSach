@@ -1,6 +1,7 @@
 package com.example.appdocsachv2.Database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -51,7 +52,8 @@ public class DatabaseDocTruyen extends SQLiteOpenHelper {
     // 1:admin
     // 2:user
     private String SQLQuery2 = "INSERT INTO TaiKhoan VAlUES (null,'admin','admin','admin@gmail.com',2)";
-    private String SQLQuery3 = "INSERT INTO TaiKhoan VAlUES (null,'user','user','user@gmail.com',1)+(null,'lam','lam','lam@gmail.com',1)";
+    private String SQLQuery3 = "INSERT INTO TaiKhoan VAlUES (null,'lam','lam','lam@gmail.com',1)";
+
 
     //Truyền nội dung truyện
     private String SQLQuery4 = "INSERT INTO truyen VALUES (null,'Rùa và Thỏ','Phần 1:\n" +
@@ -231,5 +233,10 @@ public class DatabaseDocTruyen extends SQLiteOpenHelper {
 
     }
 
-    
+    public Cursor getData(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_TAIKHOAN,null);
+        return res;
+    }
+
 }
