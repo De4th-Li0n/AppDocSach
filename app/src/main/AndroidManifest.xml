@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDocSachV2">
         <activity
+            android:name=".MainNoiDung"
+            android:exported="true" />
+        <activity
             android:name=".MainTimKiem"
             android:exported="true" />
         <activity
