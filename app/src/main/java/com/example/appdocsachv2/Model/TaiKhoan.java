@@ -9,7 +9,7 @@ public class TaiKhoan {
     private int mPhanQuyen;
 
     //hàm khởi tạo
-    public TaiKhoan(String mTenTaiKhoan, String mMatKhau, String mEmail) {
+    public TaiKhoan(String mTenTaiKhoan, String mMatKhau) {
         this.mTenTaiKhoan = mTenTaiKhoan;
         this.mMatKhau = mMatKhau;
         this.mEmail = mEmail;

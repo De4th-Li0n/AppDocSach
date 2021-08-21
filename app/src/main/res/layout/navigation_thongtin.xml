@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:background="@drawable/ic_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <ImageView
+            android:src="@drawable/user_icon"
+            android:id="@+id/imageview"
+            android:layout_marginTop="10dp"
+            android:scrollX="0dp"
+            android:layout_width="90dp"
+            android:layout_height="80dp"></ImageView>
+
+        <TextView
+            android:textColor="#FF3E02"
+            android:textStyle="bold"
+            android:text="Nhóm 10"
+            android:id="@+id/TEXT_NAME"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="#0047FF"
+            android:text="Nhom10@gmail.com"
+            android:id="@+id/TeXT_Gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+        <TextView
+            android:textStyle="bold"
+            android:text="Online"
+            android:id="@+id/TEXT_TrangThai"
+            android:textColor="#1AD1FF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+</LinearLayout>
