@@ -1,11 +1,19 @@
 package com.example.appdocsachv2;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -35,7 +43,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         AnhXa();
+        ActionBar();
         ActionViewFlipper();
+    }
+    private void ActionBar(){
+        // hàm hỗ trợ toolbar
+        setSupportActionBar(toolbar);
+
+        // set nut cho toolbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // tạo icon cho toolbar
+        toolbar.setNavigationIcon(android.R.drawable.ic_menu_sort_by_size);
+
+        // tạo sự kiện bắt click
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+
     }
 
     private void ActionViewFlipper() {
@@ -79,5 +108,26 @@ public class MainActivity extends AppCompatActivity {
         listViewThongtin = findViewById(R.id.navigationview);
         drawerLayout = findViewById(R.id.drawerlayout);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.menu1:
+                Intent intent = new Intent(MainActivity.this,MainTimKiem.class);
+                startActivity(intent);
+                break;
+
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
