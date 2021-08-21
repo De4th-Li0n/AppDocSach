@@ -17,12 +17,15 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.Toolbar
+                android:background="#ffffff"
+                app:titleTextColor="#000000"
                 android:id="@+id/toolbarmanhinhchinh"
                 app:title="Tủ Truyện"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
 
             <ViewFlipper
+                android:background="#ffffff"
                 android:id="@+id/viewfliper"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"></ViewFlipper>
