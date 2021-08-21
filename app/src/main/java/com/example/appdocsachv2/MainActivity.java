@@ -1,16 +1,7 @@
 package com.example.appdocsachv2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,22 +11,24 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ViewFlipper;
 
-import com.google.android.material.navigation.NavigationBarView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.NavigableSet;
 
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     ViewFlipper viewFlipper;
     NavigationView navigationView;
-    ListView listView,listViewNew,listViewThongtin;
+    ListView listView,listViewNew,listViewThongTin;
     DrawerLayout drawerLayout;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +36,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         AnhXa();
-        ActionBar();
+
         ActionViewFlipper();
+        
+        ActionBar();
     }
-    private void ActionBar(){
+
+    private void ActionBar() {
         // hàm hỗ trợ toolbar
         setSupportActionBar(toolbar);
 
-        // set nut cho toolbar
+        // set nút cho toolbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // tạo icon cho toolbar
@@ -63,15 +59,17 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
-
-
     }
 
+    //Phương thức chạy quảng cáo
     private void ActionViewFlipper() {
         ArrayList<String> mangquangcao = new ArrayList<>();
-        mangquangcao.add("https://i.ytimg.com/vi/IGiCAOkGXIo/maxresdefault.jpg");
-        mangquangcao.add("https://truyendangian.com/wp-content/uploads/2020/03/cau-be-chan-cuu-noi-doi.png");
-        mangquangcao.add("https://tskids.vn/image/5e3858961d41c817059dd6d8/thumbnail.jpg");
+        //add vào mảng 4 ảnh
+        mangquangcao.add("https://truyencotich.vn/wp-content/uploads/2015/02/edop11-590x440.jpg");
+        mangquangcao.add("https://toplist.vn/images/800px/tho-va-rua-210428.jpg");
+        mangquangcao.add("https://toplist.vn/images/800px/de-den-va-de-trang-210415.jpg");
+        mangquangcao.add("https://toplist.vn/images/800px/nang-bach-tuyet-va-bay-chu-lun-210383.jpg");
+
 
         // thiết lập vòng lặp for gán ảnh vào imageView, rồi từ imgview lên app
         for (int i=0; i<mangquangcao.size();i++){
@@ -100,14 +98,15 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.setAnimation(animation_slide_out);
     }
 
+    //Phương thức ánh xạ
     private void AnhXa() {
         toolbar  = findViewById(R.id.toolbarmanhinhchinh);
         viewFlipper = findViewById(R.id.viewfliper);
         listViewNew = findViewById(R.id.listviewnew);
         listView = findViewById(R.id.listviewmanhinh);
-        listViewThongtin = findViewById(R.id.navigationview);
+        listViewThongTin = findViewById(R.id.listviewthongtin);
+        navigationView = findViewById(R.id.navigationview);
         drawerLayout = findViewById(R.id.drawerlayout);
-
     }
 
     @Override
@@ -121,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.menu1:
-                Intent intent = new Intent(MainActivity.this,MainTimKiem.class);
-                startActivity(intent);
+                Intent myintent = new Intent(MainActivity.this,MainTimKiem.class);
+                startActivity(myintent);
                 break;
 
             default:
@@ -130,4 +129,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

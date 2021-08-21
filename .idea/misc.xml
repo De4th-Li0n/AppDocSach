@@ -3,12 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/APC/Documents/GitHub/AppDocSach/app/src/main/res/layout/activity_main.xml" value="0.1634963768115942" />
-        <entry key="..\:/Users/APC/Documents/GitHub/AppDocSach/app/src/main/res/layout/activity_main_tim_kiem.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/APC/Documents/GitHub/AppDocSach/app/src/main/res/menu/mymenu.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSachV2/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSachV2/app/src/main/res/layout/activity_main.xml" value="0.1893939393939394" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSachV2/app/src/main/res/layout/activity_main_dang_ky.xml" value="0.18432971014492755" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSachV2/app/src/main/res/layout/activity_main_dang_nhap.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSachV2/app/src/main/res/layout/activity_main_tim_kiem.xml" value="0.17980072463768115" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppDocSachV2/app/src/main/res/menu/mymenu.xml" value="0.22447916666666667" />
       </map>
     </option>
   </component>
