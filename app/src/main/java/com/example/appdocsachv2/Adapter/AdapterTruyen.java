@@ -1,6 +1,7 @@
 package com.example.appdocsachv2.Adapter;
 
 import android.content.Context;
+import android.icu.text.Transliterator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,12 @@ public class AdapterTruyen extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return 0;
+    }
+
+    // filter
+    public void filterList(ArrayList<Truyen> filteredList) {
+        listTruyen = filteredList;
+        notifyDataSetChanged();
     }
 
     public class  ViewHoIder{

@@ -6,13 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/cardview_light_background"
     tools:context=".MainTimKiem">
 
     <EditText
+        android:layout_margin="5dp"
+        android:textColorHint="#040404"
         android:id="@+id/timkiem"
         android:hint="search"
+        android:background="#0325E4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></EditText>
+        android:layout_height="35dp"></EditText>
     <ListView
         android:id="@+id/listviewTimKiem"
         android:layout_width="match_parent"

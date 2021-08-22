@@ -13,7 +13,7 @@
 
 
     <TextView
-        android:gravity="center"
+        android:layout_gravity="center"
         android:textSize="25sp"
         android:text="Tên chuyên mục"
         android:id="@+id/textviewTenchuyenmuc"
