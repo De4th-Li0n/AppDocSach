@@ -6,23 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainNoiDung">
+    tools:context=".MainThongTin">
 
     <TextView
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:text="Tên Truyện"
-        android:id="@+id/TenTruyen"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"></TextView>
-    <TextView
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:textSize="40dp"
+        android:text="Thông Tin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
 
-        android:scrollbars="vertical"
+    <TextView
+        android:id="@+id/textviewthongtin"
+        android:padding="25dp"
         android:textSize="25sp"
-        android:text="Nội Dung"
-        android:layout_margin="20dp"
-        android:id="@+id/noidung"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></TextView>
 

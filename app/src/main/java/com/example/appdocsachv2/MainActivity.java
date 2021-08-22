@@ -86,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
 
                 String tent = TruyenArrayList.get(position).getTenTruyen();
                 String noidungt = TruyenArrayList.get(position).getNoiDung();
-                intent.putExtra("ten truyen",tent);
-                intent.putExtra("noi dung",noidungt);
+                intent.putExtra("tentruyen",tent);
+                intent.putExtra("noidung",noidungt);
                 startActivity(intent);
             }
         });
@@ -96,16 +96,23 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Đăng bài
                 if(position == 0){
                     if (i == 2) {
+                        Intent intent = new Intent(MainActivity.this,ManAdmin.class);
+                        startActivity(intent);
                     }
                     else {
                         Toast.makeText(MainActivity.this,"Bạn không có quyền đăng bài", Toast.LENGTH_SHORT).show();
                         Log.e("Đăng bài : ", "Bạn không có quyền");
                     }
                 }
+                // nếu vị trí ấn vào là thông tinthì chuyển sang màn hình thông tin
                 else if (position == 1){
+                    Intent intent = new Intent(MainActivity.this,MainThongTin.class);
+                    startActivity(intent);
                 }
+                // Đăng xuất
                 else  if (position == 2){
                     finish();
                 }

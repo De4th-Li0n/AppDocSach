@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDocSachV2">
         <activity
+            android:name=".ManAdmin"
+            android:exported="true" />
+        <activity
+            android:name=".MainThongTin"
+            android:exported="true" />
+        <activity
             android:name=".MainNoiDung"
             android:exported="true" />
         <activity
