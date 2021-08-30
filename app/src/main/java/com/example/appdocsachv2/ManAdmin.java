@@ -2,6 +2,7 @@ package com.example.appdocsachv2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -59,6 +60,24 @@ public class ManAdmin extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
 
+                DialogDelete(position);
+
+                return false;
+            }
+        });
+
+    }
+    private void DialogDelete(int position){
+        Dialog dialog =new Dialog(this);
+        dialog.setContentView(R.layout.dialogdelete);
+        dialog.setCanceledOnTouchOutside(false);
+
+        Button btnyes = dialog.findViewById(R.id.buttonYes);
+        Button btnno = dialog.findViewById(R.id.buttonNo);
+
+        btnyes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 int idtruyen = TruyenArrayList.get(position).getID();
 
                 // Xóa dữ liệu
@@ -69,10 +88,15 @@ public class ManAdmin extends AppCompatActivity {
                 finish();
                 startActivity(intent);
                 Toast.makeText(ManAdmin.this, "Xóa Truyện Thành Công",Toast.LENGTH_SHORT).show();
-                return false;
             }
         });
-
+        btnno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
+        dialog.show();
     }
 
     // gán dữ liệu cho listview
