@@ -55,10 +55,7 @@ public class AdapterChuyenMuc extends BaseAdapter {
 
         txt.setText(cm.getTenchuyenmuc());
 
-        Picasso.get().load(cm.getHinhanhchuyenmuc())
-                .placeholder(R.drawable.ic_load)
-                .error(R.drawable.ic_image)
-                .into(img);
+        Picasso.get().load(cm.getHinhanhchuyenmuc()).placeholder(R.drawable.ic_load).error(R.drawable.ic_image).into(img);
 
         return convertView;
     }

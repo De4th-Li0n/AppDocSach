@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.icu.text.Transliterator;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -38,9 +39,9 @@ public class ManAdmin extends AppCompatActivity {
 
         initList();
 
-        buttonThem.setOnClickListener(new View.OnClickListener(){
+        buttonThem.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
 
                 // Lấy id tài khoản để biết tài khoản admin đã chỉnh sửa
                 Intent intent1 = getIntent();
@@ -48,7 +49,7 @@ public class ManAdmin extends AppCompatActivity {
 
 
                 // tiếp tục gửi id qua màn hình thêm truyện
-                Intent intent = new Intent(ManAdmin.this,MainDangBai.class);
+                Intent intent = new Intent(ManAdmin.this, MainDangBai.class);
                 intent.putExtra("Id", id);
                 startActivity(intent);
 
@@ -56,38 +57,37 @@ public class ManAdmin extends AppCompatActivity {
         });
 
         // click item Long sẽ xóa item
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 DialogDelete(position);
 
-                return false;
             }
         });
-
     }
+
     private void DialogDelete(int position){
-        Dialog dialog =new Dialog(this);
+        Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialogdelete);
         dialog.setCanceledOnTouchOutside(false);
 
         Button btnyes = dialog.findViewById(R.id.buttonYes);
-        Button btnno = dialog.findViewById(R.id.buttonNo);
+        Button btnno  = dialog.findViewById(R.id.buttonNo);
 
         btnyes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 int idtruyen = TruyenArrayList.get(position).getID();
 
-                // Xóa dữ liệu
                 DatabaseDocTruyen.Delete(idtruyen);
 
-                // Cập nhật  lại Activity
-                Intent intent =new Intent(ManAdmin.this,ManAdmin.class);
+                Intent intent = new Intent(ManAdmin.this, ManAdmin.class);
                 finish();
                 startActivity(intent);
-                Toast.makeText(ManAdmin.this, "Xóa Truyện Thành Công",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ManAdmin.this, "Xóa truyện thành công", Toast.LENGTH_SHORT).show();
+
             }
         });
         btnno.setOnClickListener(new View.OnClickListener() {
